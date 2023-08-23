@@ -2,6 +2,7 @@
 
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
 DATE=$(date +%F)
@@ -13,14 +14,14 @@ VALIDATE()
 {
  if [ $1 -ne 0]
  then
-    echo -e "$R Installing $2.........ERROR $N"
+    echo -e "$R Installing $2 .........ERROR $N"
  else 
-    echo -e "$G Installing $2.........SUCCESS $N"
+    echo -e "$G Installing $2 .........SUCCESS $N"
 }
 
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
-then
+ then
     echo -e "$R ERROR:: Procced with ROOT access $N"
     exit 1
 fi
@@ -29,11 +30,11 @@ for i in  $@
 do
     yum list installed $i &>>$LOGFILE
     if [ $? -ne 0]
-    then
-        echo -e "$i is not installed,let us install now"
+     then
+        echo "$i is not installed,let us install now"
         yum install $i &>>$LOGFILE
         VALIDATE $? "$i"
-    else
+     else
         echo -e "$Y $i is already installed $N"
     fi
 done
