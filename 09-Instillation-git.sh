@@ -10,3 +10,22 @@ then
 fi
 
 yum install git -y
+
+if [ $? -ne 0 ]
+then
+    echo "Instillation of git is ERROR"
+    exit 1
+else
+    echo "Instillation of git is Success"
+fi    
+
+yum install mysql -y
+
+if [ $? -ne 0 ]
+then
+    echo "Instillation of mysql is ERROR"
+    exit 1
+else
+    echo "Instillation of mysql is Success"
+fi    
+
