@@ -6,9 +6,9 @@ Y="\e[33m"
 N="\e[0m"
 
 DATE=$(date +%F)
-LOGDIR=/home/centos/shellscript-logs
+LOGSDIR=/home/centos/shellscript-logs
 SCRIPT_NAME=$0
-LOGFILE=$LOGDIR/$0-$DATE.log
+LOGFILE=$LOGSDIR/$0-$DATE.log
 
 VALIDATE(){
  if [ $1 -ne 0 ]
@@ -33,7 +33,7 @@ do
     if [ $? -ne 0 ]
      then
         echo "$i is not installed,let's install it"
-        yum install $i -y &>>$LOGFILE
+        yum install $i &>>$LOGFILE
         VALIDATE $? "$i"
      else
         echo -e "$Y $i is already installed $N"
