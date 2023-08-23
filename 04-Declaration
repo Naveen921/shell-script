@@ -1,4 +1,4 @@
 #!/bin/bash
 Date=$(date)
 
-echo "this script is excecuted on timestamp: $Date"
+echo "Hello,this script is executed on timestamp: $Date"
