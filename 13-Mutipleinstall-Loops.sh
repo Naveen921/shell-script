@@ -10,9 +10,8 @@ LOGDIR=/home/centos/shellscript-logs
 SCRIPT_NAME=$0
 LOGFILE=$LOGDIR/$0-$DATE.log
 
-VALIDATE()
-{
- if [ $1 -ne 0]
+VALIDATE(){
+ if [ $1 -ne 0 ]
  then
     echo -e "$R Installing $2 .........ERROR $N"
  else 
