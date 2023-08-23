@@ -16,6 +16,7 @@ VALIDATE(){
     echo -e "$R Installing $2 .........ERROR $N"
  else 
     echo -e "$G Installing $2 .........SUCCESS $N"
+fi
 }
 
 USERID=$(id -u)
