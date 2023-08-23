@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#This is the command,we need to devolop a program that can do addition of 2 numbers
+NUMBER1=$1
+NUMBER2=$2
+
+SUM=((Number1+number2))
+
+echo "The addition of two numbers is: $SUM"
