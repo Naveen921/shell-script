@@ -3,6 +3,11 @@
 DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
 VALIDATE(){
     #$1-->it will recive the argument1 i.e. VALIDATE $?
     #$2-->it will recive the argument2 i.e. VALIDATE ($?) $2"
