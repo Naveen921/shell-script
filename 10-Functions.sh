@@ -1,6 +1,8 @@
 #!/bin/bash
 #our goal is to insatll git
 
+USERID=$(id -u)
+
 VIDATE(){
     #$1-->it will recive the argument1 i.e. VALIDATE $?
     #$2-->it will recive the argument2 i.e. VALIDATE ($?) $2"
@@ -13,7 +15,6 @@ else
 fi    
 }
 
-USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
     echo "ERROR:: Please run this script with root user"
