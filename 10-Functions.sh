@@ -1,6 +1,8 @@
 #!/bin/bash
 #our goal is to insatll git
-
+DATE=$(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 VALIDATE(){
     #$1-->it will recive the argument1 i.e. VALIDATE $?
     #$2-->it will recive the argument2 i.e. VALIDATE ($?) $2"
@@ -20,9 +22,9 @@ then
     exit 1
 fi
 
-yum install git -y
+yum install git -y &>>$LOGFILE
 VALIDATE $? "Insatlling git"
 
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing mysql"
 
