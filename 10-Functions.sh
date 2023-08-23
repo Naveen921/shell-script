@@ -1,6 +1,6 @@
 #!/bin/bash
 #our goal is to insatll git
-VIDATE(){
+VALIDATE(){
     #$1-->it will recive the argument1 i.e. VALIDATE $?
     #$2-->it will recive the argument2 i.e. VALIDATE ($?) $2"
 if [ $1 -ne 0 ]
