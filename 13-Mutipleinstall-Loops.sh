@@ -29,7 +29,7 @@ fi
 for i in  $@
 do
     yum list installed $i &>>$LOGFILE
-    if [ $? -ne 0]
+    if [ $? -ne 0 ]
      then
         echo "$i is not installed,let us install now"
         yum install $i &>>$LOGFILE
