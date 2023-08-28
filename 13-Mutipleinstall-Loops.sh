@@ -1,14 +1,21 @@
 #!/bin/bash
 
+DATE=$(date +%F)
+LOGSDIR=/home/centos/shellscript-logs
+SCRIPT_NAME=$0
+LOGFILE=$LOGSDIR/$0-$DATE.log
+
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-DATE=$(date +%F)
-LOGSDIR=/home/centos/shellscript-logs
-SCRIPT_NAME=$0
-LOGFILE=$LOGSDIR/$0-$DATE.log
+if [ $USERID -ne 0 ]
+ then
+    echo -e "$R ERROR:: Procced with ROOT access $N"
+    exit 1
+fi
 
 VALIDATE(){
  if [ $1 -ne 0 ]
@@ -17,15 +24,8 @@ VALIDATE(){
     exit 1
  else 
     echo -e "$G Installing $2 .........SUCCESS $N"
-fi
+   fi
 }
-
-USERID=$(id -u)
-if [ $USERID -ne 0 ]
- then
-    echo -e "$R ERROR:: Procced with ROOT access $N"
-    exit 1
-fi
 
 for i in  $@
 do
@@ -37,5 +37,5 @@ do
         VALIDATE $? "$i"
      else
         echo -e "$Y $i is already installed $N"
-    fi
+      fi
 done
