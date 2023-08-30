@@ -24,7 +24,8 @@ do
     #check wheather greaterthen or not
     if [ $usage -gt $DISK_USAGE_THRESHOLD ];
     then 
-        message+="HIGH DISK USAGE ON $partition: $usage"
+        message+="HIGH DISK USAGE ON $partition: $usage \n"
     fi
 done <<< $DISK_USAGE
       echo "message: $message"
+      echo "$message" | mail -s "HARD DISK USAGE" naninani35678@gmail.com
