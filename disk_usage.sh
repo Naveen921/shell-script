@@ -27,5 +27,8 @@ do
         message+="HIGH DISK USAGE ON $partition: $usage \n"
     fi
 done <<< $DISK_USAGE
-      echo "message: $message"
-      echo "$message" | mail -s "HARD DISK USAGE" naninani35678@gmail.com
+      echo -e "message: $message"
+      #echo "$message" | mail -s "HARD DISK USAGE" naninani35678@gmail.com
+
+      #how to call other shell script from your current script
+      sh mail.sh naninani35678@gmail.com "High DISK USAGE" "$message" "Devops Team" "High Disk Usage"
